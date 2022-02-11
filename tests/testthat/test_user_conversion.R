@@ -48,3 +48,9 @@ test_that("removing units works", {
   expect_error(install_unit("foo"))
   expect_silent(remove_unit("foo"))
 })
+
+test_that("creating a new unit equivalent to an existing unit works", {
+  expect_silent(remove_unit("foo", "1 kg"))
+  expect_silent(install_unit("foo", "1 kg"))
+  expect_silent(remove_unit("foo", "1 kg"))
+})
